@@ -6,20 +6,20 @@
 /*   By: tchumbas <tchumbas@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 13:40:53 by tchumbas          #+#    #+#             */
-/*   Updated: 2025/09/30 19:56:25 by tchumbas         ###   ########.fr       */
+/*   Updated: 2025/10/27 20:46:43 by tchumbas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	unsigned int	i;
+	size_t	i;
 
 	i = 0;
-	if (size > 0)
+	if (size > 0 && src[ft_strlen(src)] == '\0')
 	{
-		while (src[i] != '\0' && i < (size - 1))
+		while (i < size - 1 && src[i])
 		{
 			dest[i] = src[i];
 			i++;

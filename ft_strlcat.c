@@ -6,38 +6,30 @@
 /*   By: tchumbas <tchumbas@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 19:52:12 by tchumbas          #+#    #+#             */
-/*   Updated: 2025/10/27 19:52:27 by tchumbas         ###   ########.fr       */
+/*   Updated: 2025/10/27 20:49:54 by tchumbas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	unsigned int	i;
-	unsigned int	y;
-	unsigned int	lensrc;
-	unsigned int	lendest;
-	unsigned int	lentotal;
+	size_t	i_s;
+	size_t	lendest;
+	size_t	lensrc;
 
-	lensrc = ft_strlen(src);
+	i_s = 0;
 	lendest = ft_strlen(dest);
-	lentotal = lendest + lensrc;
-	while (i < size)
+	lensrc = ft_strlen(src);
+	if (size > lendest)
 	{
-		if (dest[i] != '\0')
+		while (i_s < size - lendest - 1 && src[i_s])
 		{
-			i++;
+			dest[lendest + i_s] = src[i_s];
+			i_s++;
 		}
-		else if (dest[i] == '\0')
-		{
-			while (size < lentotal)
-			{
-				dest[i + y] = src[y];
-				y++;
-			}
-			return (lentotal);
-		}
+		dest[lendest + i_s] = '\0';
+		return (lendest + lensrc);
 	}
-	return (size);
+	return (size + lensrc);
 }
