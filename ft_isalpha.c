@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchumbas <tchumbas@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/22 17:55:43 by tchumbas          #+#    #+#             */
-/*   Updated: 2025/10/27 19:53:03 by tchumbas         ###   ########.fr       */
+/*   Created: 2025/10/27 19:32:18 by tchumbas          #+#    #+#             */
+/*   Updated: 2025/10/27 19:44:18 by tchumbas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H 
-# define LIBFT_H
+#include "libft.h"
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
-unsigned int	ft_strlen(char *str);
-int				ft_isalpha(char *str);
-int				ft_isdigit(char *str);
-int				ft_isprint(char *str);
-char			*ft_toupper(char *str);
-char			*ft_tolower(char *str);
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
+int	ft_isalpha(char *str)
+{
+	int		i;
+	char	c;
 
-#endif
+	i = 0;
+	while (str[i] != '\0')
+	{
+		c = str[i];
+		if (!((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')))
+		{
+			return (0);
+		}
+		i++;
+	}
+	return (1);
+}

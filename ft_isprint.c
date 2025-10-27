@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchumbas <tchumbas@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/22 17:55:43 by tchumbas          #+#    #+#             */
-/*   Updated: 2025/10/27 19:53:03 by tchumbas         ###   ########.fr       */
+/*   Created: 2025/10/27 19:45:26 by tchumbas          #+#    #+#             */
+/*   Updated: 2025/10/27 19:46:13 by tchumbas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H 
-# define LIBFT_H
+#include "libft.h"
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
-unsigned int	ft_strlen(char *str);
-int				ft_isalpha(char *str);
-int				ft_isdigit(char *str);
-int				ft_isprint(char *str);
-char			*ft_toupper(char *str);
-char			*ft_tolower(char *str);
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
+int	ft_isprint(char *str)
+{
+	unsigned int	i;
+	unsigned char	c;
+	unsigned int	len;
 
-#endif
+	i = 0;
+	c = '0';
+	len = ft_strlen(str);
+	while (i < len)
+	{
+		c = str[i];
+		if (!((c >= 32) && (c <= 126)))
+		{
+			return (0);
+		}
+		i++;
+	}
+	return (1);
+}

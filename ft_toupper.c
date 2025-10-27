@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchumbas <tchumbas@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/22 17:55:43 by tchumbas          #+#    #+#             */
-/*   Updated: 2025/10/27 19:53:03 by tchumbas         ###   ########.fr       */
+/*   Created: 2025/10/27 19:47:39 by tchumbas          #+#    #+#             */
+/*   Updated: 2025/10/27 19:48:02 by tchumbas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H 
-# define LIBFT_H
+#include "libft.h"
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
-unsigned int	ft_strlen(char *str);
-int				ft_isalpha(char *str);
-int				ft_isdigit(char *str);
-int				ft_isprint(char *str);
-char			*ft_toupper(char *str);
-char			*ft_tolower(char *str);
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
+char	*ft_toupper(char *str)
+{
+	int		i;
+	char	c;
 
-#endif
+	i = 0;
+	while (str[i] != '\0')
+	{
+		c = str[i];
+		if (c >= 'a' && c <= 'z')
+		{
+			str[i] = str[i] - 32;
+		}
+		i++;
+	}
+	return (str);
+}
