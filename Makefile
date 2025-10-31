@@ -6,7 +6,7 @@
 #    By: tchumbas <tchumbas@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/30 18:43:23 by tchumbas          #+#    #+#              #
-#    Updated: 2025/10/27 20:50:39 by tchumbas         ###   ########.fr        #
+#    Updated: 2025/10/31 21:01:39 by tchumbas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,10 @@ SRCS = ft_strlcpy.c \
 	ft_strncmp.c \
 	ft_isalnum.c \
 	ft_isascii.c \
+	ft_strchr.c \
+	ft_strrchr.c \
+	ft_strnstr.c \
+	ft_atoi.c \
 	
 
 OBJS = $(SRCS:.c=.o)
@@ -47,13 +51,8 @@ $(NAME) : $(OBJS)
 # bzero
 # memcpy
 # memmove
-# strchr
-# strrchr
 # memchr
 # memcmp
-# strnstr
-# atoi
-
 
 # >>> strlcpy
 # >>> strlen
@@ -66,6 +65,10 @@ $(NAME) : $(OBJS)
 # >>> isascii
 # >>> toupper
 # >>> tolower
+# >>> strchr
+# >>> strrchr
+# >>> strnstr
+# >>> atoi
 
 clean: 
 	rm -rf *.o
