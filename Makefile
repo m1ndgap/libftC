@@ -6,7 +6,7 @@
 #    By: tchumbas <tchumbas@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/30 18:43:23 by tchumbas          #+#    #+#              #
-#    Updated: 2025/10/31 21:01:39 by tchumbas         ###   ########.fr        #
+#    Updated: 2025/10/31 21:09:26 by tchumbas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,6 +54,22 @@ $(NAME) : $(OBJS)
 # memchr
 # memcmp
 
+# calloc 
+# strdup
+
+# ft_substr
+# ft_strjoin
+# ft_strtrim
+# ft_split
+# ft_itoa
+# ft_strmapi
+# ft_striteri
+# ft_putchar_fd
+# ft_putstr_fd
+# ft_putendl_fd
+# ft_putnbr_fd
+
+# ======================
 # >>> strlcpy
 # >>> strlen
 # >>> strlcat
