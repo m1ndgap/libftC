@@ -6,7 +6,7 @@
 /*   By: tchumbas <tchumbas@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 15:59:59 by tchumbas          #+#    #+#             */
-/*   Updated: 2025/11/03 16:00:17 by tchumbas         ###   ########.fr       */
+/*   Updated: 2025/11/03 18:11:00 by tchumbas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	ft_count_words(const char *s, char c)
 			words++;
 			while (s[i] && s[i] != c)
 				i++;
-		}	
+		}
 		else
 			i++;
 	}
@@ -41,7 +41,7 @@ static char	*word_splitter(const char *s, char c)
 	i = 0;
 	while (s[i] && s[i] != c)
 		i++;
-	word = (char *) malloc(sizeof(char) * (i + 1));
+	word = (char *)malloc(sizeof(char) * (i + 1));
 	if (!word)
 		return (NULL);
 	i = 0;
@@ -62,7 +62,7 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	words = (char **) malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
+	words = (char **)malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
 	if (!words || !s)
 		return (NULL);
 	while (s[i])
