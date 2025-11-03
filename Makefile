@@ -6,7 +6,7 @@
 #    By: tchumbas <tchumbas@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/30 18:43:23 by tchumbas          #+#    #+#              #
-#    Updated: 2025/11/03 00:42:11 by tchumbas         ###   ########.fr        #
+#    Updated: 2025/11/03 16:28:16 by tchumbas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,17 @@ SRCS = ft_strlcpy.c \
 	ft_memcmp.c \
 	ft_memchr.c \
 	ft_calloc.c \
-	
+	ft_substr.c \
+	ft_strjoin.c \
+	ft_strtrim.c \
+	ft_split.c \
+	ft_itoa.c \
+	ft_strmapi.c \
+	ft_striteri.c \
+	ft_putchar_fd.c \
+	ft_putendl_fd.c \
+	ft_putstr_fd.c \
+	ft_putnbr_fd.c \	
 
 OBJS = $(SRCS:.c=.o)
 
@@ -51,52 +61,6 @@ all: $(NAME)
 
 $(NAME) : $(OBJS)
 	ar rcs $(NAME) $(OBJS)
-
-
-
-
-
-
-
-
-
-
-# ft_substr
-# ft_strjoin
-# ft_strtrim
-# ft_split
-# ft_itoa
-# ft_strmapi
-# ft_striteri
-# ft_putchar_fd
-# ft_putstr_fd
-# ft_putendl_fd
-# ft_putnbr_fd
-
-# ======================
-# >>> strlcpy
-# >>> strlen
-# >>> strlcat
-# >>> strncmp
-# >>> isalpha
-# >>> isdigit
-# >>> isprint
-# >>> isalnum
-# >>> isascii
-# >>> toupper
-# >>> tolower
-# >>> strchr
-# >>> strrchr
-# >>> strnstr
-# >>> atoi
-# >>> bzero
-# >>> strdup
-# >>> memset
-# >>> memmove
-# >>> memcpy
-# >>> memcmp
-# >>> memchr
-# >>> calloc 
 
 clean: 
 	rm -rf *.o
