@@ -6,7 +6,7 @@
 #    By: tchumbas <tchumbas@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/30 18:43:23 by tchumbas          #+#    #+#              #
-#    Updated: 2025/10/31 21:09:26 by tchumbas         ###   ########.fr        #
+#    Updated: 2025/11/03 00:42:11 by tchumbas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,14 @@ SRCS = ft_strlcpy.c \
 	ft_strrchr.c \
 	ft_strnstr.c \
 	ft_atoi.c \
+	ft_bzero.c \
+	ft_strdup.c \
+	ft_memset.c \
+	ft_memmove.c \
+	ft_memcpy.c \
+	ft_memcmp.c \
+	ft_memchr.c \
+	ft_calloc.c \
 	
 
 OBJS = $(SRCS:.c=.o)
@@ -47,15 +55,11 @@ $(NAME) : $(OBJS)
 
 
 
-# memset
-# bzero
-# memcpy
-# memmove
-# memchr
-# memcmp
 
-# calloc 
-# strdup
+
+
+
+
 
 # ft_substr
 # ft_strjoin
@@ -85,6 +89,14 @@ $(NAME) : $(OBJS)
 # >>> strrchr
 # >>> strnstr
 # >>> atoi
+# >>> bzero
+# >>> strdup
+# >>> memset
+# >>> memmove
+# >>> memcpy
+# >>> memcmp
+# >>> memchr
+# >>> calloc 
 
 clean: 
 	rm -rf *.o
