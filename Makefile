@@ -6,7 +6,7 @@
 #    By: tchumbas <tchumbas@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/30 18:43:23 by tchumbas          #+#    #+#              #
-#    Updated: 2025/11/03 16:57:43 by tchumbas         ###   ########.fr        #
+#    Updated: 2025/11/09 18:39:19 by tchumbas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,7 @@ $(NAME) : $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
 clean: 
-	rm -rf *.o
+	rm -rf $(OBJS)
 
 fclean: clean
 	rm -rf $(NAME)
