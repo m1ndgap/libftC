@@ -6,7 +6,7 @@
 /*   By: tchumbas <tchumbas@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 16:24:52 by tchumbas          #+#    #+#             */
-/*   Updated: 2025/11/15 17:31:31 by tchumbas         ###   ########.fr       */
+/*   Updated: 2025/11/15 19:11:00 by tchumbas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 void	ft_putendl_fd(char *s, int fd)
 {
 	size_t	len;
-	if (!s)
-		return;
 
+	if (!s)
+		return ;
 	len = ft_strlen(s);
 	write(fd, s, len);
 	write(fd, "\n", 1);

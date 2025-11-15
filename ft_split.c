@@ -5,80 +5,89 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchumbas <tchumbas@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/03 15:59:59 by tchumbas          #+#    #+#             */
-/*   Updated: 2025/11/15 18:05:36 by tchumbas         ###   ########.fr       */
+/*   Created: 2025/11/15 19:48:50 by tchumbas          #+#    #+#             */
+/*   Updated: 2025/11/15 19:49:02 by tchumbas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_count_words(const char *s, char c)
+static size_t	ctwords(const char *s, char c)
 {
-	int	i;
-	int	words;
+	size_t	ct;
+	size_t	id;
 
-	i = 0;
-	words = 0;
-	while (s[i])
+	id = 0;
+	ct = 0;
+	while (s[id] != '\0')
 	{
-		if (s[i] != c)
+		while (s[id] && s[id] == c)
 		{
-			words++;
-			while (s[i] && s[i] != c)
-				i++;
+			id++;
 		}
-		else
-			i++;
+		if (s[id] && s[id] != c)
+		{
+			while (s[id] && s[id] != c)
+			{
+				id++;
+			}
+			ct++;
+		}
 	}
-	return (words);
+	return (ct);
 }
 
-static char	*word_splitter(const char *s, char c)
+static void	*free_all(char **temp)
 {
-	char	*word;
-	int		i;
+	int	id;
 
-	i = 0;
-	while (s[i] && s[i] != c)
-		i++;
-	word = (char *)malloc(sizeof(char) * (i + 1));
-	if (!word)
+	if (!temp)
 		return (NULL);
-	i = 0;
-	while (s[i] && s[i] != c)
+	id = 0;
+	while (temp[id])
+		free(temp[id++]);
+	free(temp);
+	return (NULL);
+}
+
+static char	**presplit(char **arrtemp, char const *s, char c)
+{
+	unsigned int	id;
+	unsigned int	id2;
+	unsigned int	iw;
+
+	id = 0;
+	iw = 0;
+	while (s[id] != '\0')
 	{
-		word[i] = s[i];
-		i++;
+		if (s[id] && s[id] != c)
+		{
+			id2 = id;
+			while (s[id2] && s[id2] != c)
+				id2++;
+			arrtemp[iw] = ft_substr(s, id, id2 - id);
+			if (!arrtemp[iw])
+				return (free_all(arrtemp));
+			iw++;
+			id = id2;
+		}
+		else
+			id++;
 	}
-	word[i] = '\0';
-	return (word);
+	arrtemp[iw] = NULL;
+	return (arrtemp);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		i;
-	int		j;
-	char	**words;
+	char	**str;
 
-	i = 0;
-	j = 0;
 	if (!s)
-		return (NULL);
-	words = (char **)malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
-	if (!words)
-		return (NULL);
-	while (s[i])
 	{
-		if (s[i] != c)
-		{
-			words[j] = word_splitter(&s[i], c);
-			while (s[i] && s[i] != c)
-				i++;
-			j++;
-		}
-		else
-			i++;
+		return (NULL);
 	}
-	words[j] = 0;
-	return (words);
+	str = malloc(sizeof(char *) * (ctwords(s, c) + 1));
+	if (!str)
+		return (NULL);
+	return (presplit(str, s, c));
 }
