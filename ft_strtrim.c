@@ -6,7 +6,7 @@
 /*   By: tchumbas <tchumbas@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 15:57:31 by tchumbas          #+#    #+#             */
-/*   Updated: 2025/11/03 18:09:13 by tchumbas         ###   ########.fr       */
+/*   Updated: 2025/11/15 17:32:45 by tchumbas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	s1len;
 	char	*trimmed;
 
-	if (!s1)
+	if (!s1 || !set)
 		return (NULL);
 	i = 0;
 	s1len = ft_strlen(s1);

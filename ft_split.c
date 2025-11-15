@@ -6,7 +6,7 @@
 /*   By: tchumbas <tchumbas@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 15:59:59 by tchumbas          #+#    #+#             */
-/*   Updated: 2025/11/03 18:11:00 by tchumbas         ###   ########.fr       */
+/*   Updated: 2025/11/15 18:05:36 by tchumbas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,10 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
+	if (!s)
+		return (NULL);
 	words = (char **)malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
-	if (!words || !s)
+	if (!words)
 		return (NULL);
 	while (s[i])
 	{
