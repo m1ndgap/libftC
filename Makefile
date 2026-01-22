@@ -1,20 +1,8 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: tchumbas <tchumbas@student.42lisboa.com    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/09/30 18:43:23 by tchumbas          #+#    #+#              #
-#    Updated: 2025/11/09 18:39:19 by tchumbas         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 NAME = libft.a
 
 CC = cc 
 
-CFLAGS = -Wall -Wextra -Werror -I. -c $< -o $@
+CFLAGS = -Wall -Wextra -Werror
 
 SRCS = ft_isalpha.c \
 	ft_isdigit.c \
@@ -49,14 +37,29 @@ SRCS = ft_isalpha.c \
 	ft_putchar_fd.c \
 	ft_putstr_fd.c \
 	ft_putendl_fd.c \
-	ft_putnbr_fd.c
+	ft_putnbr_fd.c \
+	ft_lstadd_back.c \
+	ft_lstadd_front.c \
+	ft_lstclear.c \
+	ft_lstdelone.c \
+	ft_lstiter.c \
+	ft_lstlast.c \
+	ft_lstmap.c \
+	ft_lstnew.c \
+	ft_lstsize.c \
+	count_digits.c \
+	free_string_array.c \
+	ft_atol.c \
+	ft_is_space.c \
+	ft_itoa_base.c \
+	ft_strcmp.c \
 
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
 %.o : %.c
-	$(CC) $(CFLAGS)
+	$(CC) $(CFLAGS) -I. -c $< -o $@
 	ls -la
 
 $(NAME) : $(OBJS)
